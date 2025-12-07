@@ -22,7 +22,7 @@ def transform(text):
 
 # UI
 st.set_page_config(page_title="Spam Detector", page_icon="📩")
-st.title("📩 Gmail / SMS Spam Detector 🚀")
+st.title("📩 Email / SMS Spam Detector 🚀")
 
 input_sms = st.text_area("Enter a message:", height=120)
 
