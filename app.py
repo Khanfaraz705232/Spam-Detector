@@ -5,8 +5,9 @@ import string
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
-nltk.download('punkt')
-nltk.download('stopwords')
+import nltk
+nltk.data.path.append('nltk_data')
+
 
 # Load model & vectorizer
 model = pickle.load(open("model.pkl", "rb"))
