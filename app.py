@@ -9,12 +9,16 @@ model = pickle.load(open("model.pkl", "rb"))
 vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
 
 # Preprocessing function (NO punkt required)
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+import re
+
 def transform(text):
     text = text.lower()
     text = re.sub(r'[^a-zA-Z0-9\s]', ' ', text)
     tokens = text.split()
-    tokens = [t for t in tokens if t not in stopwords.words('english')]
+    tokens = [t for t in tokens if t not in ENGLISH_STOP_WORDS]
     return " ".join(tokens)
+
 
 # UI
 st.set_page_config(page_title="Spam Detector", page_icon="📩")
